@@ -1,0 +1,7 @@
+FROM ./my_model_q4_k_m.gguf
+
+# 余計な改行が入らないように一行で記述するか、バックスラッシュを使います
+TEMPLATE "<start_of_turn>user\n{{ .Prompt }}<end_of_turn>\n<start_of_turn>model\n"
+
+# AIが喋り終わる合図を明示的に指定
+PARAMETER stop "<end_of_turn>"

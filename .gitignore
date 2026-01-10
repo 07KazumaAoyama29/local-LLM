@@ -1,0 +1,7 @@
+youtube/
+create_localLLM/my_model_gguf/
+create_localLLM/outputs/
+create_localLLM/unsloth_compiled_cache/
+create_localLLM/my_model_q4_k_m.gguf
+my_model_q4_k_m.gguf
+__pycache__/
