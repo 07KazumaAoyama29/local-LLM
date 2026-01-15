@@ -37,14 +37,30 @@ sudo apt update
 ### 6. ビルドツール一式（gccなど）をインストール
 ```bash
 sudo apt install build-essential -y
+pip uninstall torch torchvision torchaudio -y
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+pip install rich
+```
+
+### 7. GPUが認識されているかの確認
+```bash
+python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}'); import unsloth; print('Unsloth loaded successfully')"
 ```
 
 
 # Step 2: 学習スクリプトの作成
 
+### 1. 作業ディレクトリの作成
+```bash
+mkdir localllm
+cd localllm
+```
+
 ローカルで動くPythonファイル train.py を作成します。 
 
 作業ディレクトリに data.jsonl（先ほどの10件データ）がある状態で実行してください。
+
+powershell.exe -Command "cd 'C:\\Users\\akazu\\llm\\local-LLM'; ollama create gemma-2-2b-it.Q4_K_M.gguf -f Modelfile"
 
 
 
